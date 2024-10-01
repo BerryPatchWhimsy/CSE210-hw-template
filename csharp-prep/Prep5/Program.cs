@@ -12,7 +12,7 @@ class Program
             int squaredNumber = SquareNumber(userNumber);
             DisplayResult(userName, squaredNumber);
         
-        
+    }    
         
         static void DisplayMessage()
         {
@@ -43,5 +43,5 @@ class Program
         {
             Console.WriteLine($"{name1}, the square of your number is {squareNumber}");
         }
-    }
+    
 }
