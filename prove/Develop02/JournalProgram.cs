@@ -4,6 +4,8 @@ class Journal
 {
     // static void Main(string[] args)
     // {
+
+        
         public List<Entry> _entries = new List<Entry>();
         public string _promptText = GetRandomPrompt();
         
