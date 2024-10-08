@@ -14,12 +14,14 @@ public class Word
 
     public void Show()
     {
+        _isHidden = false;
         Console.WriteLine(_text);
     }
 
     public void Hide()
     {
         _text = "___";
+        _isHidden = true;
         Console.WriteLine(_text);
         //hide word
     }
@@ -27,14 +29,12 @@ public class Word
     public bool IsHidden()
     {
         //check if word is shown or hidden, true or false
-        if (_text != "___")
+        if (_isHidden == false)
         {
-            _isHidden = false;
             return false;
         }
         else 
         {
-            _isHidden = true;
             return true;
         }
     }

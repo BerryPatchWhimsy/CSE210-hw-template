@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 
 public class Scripture
 {
@@ -15,17 +15,32 @@ public class Scripture
     {
         _reference = Reference;
         string input = text;
-        Word w = new Word("");
+        //Word w = new Word("");
 
         string[] pieces = input.Split(' '); 
         List<string> list = pieces.ToList();
 
-        List<object> _words = new List<object>();
+        
 
-        foreach(string s in list)
+        foreach (string s in list)
         {
-            _words.Add((object)s);   
+            List<string> _words = new List<string>();
+            // Scripture script = new Scripture(Reference, "");
+
+            // script._words.Add(s);
+
         }
+        
+        
+        //List<string> list = pieces.ToList();
+
+        // List<string> _words = new List<string>();
+        // List
+
+        // foreach(string s in list)
+        // {
+        //     _words.Add((object)s);   
+        // }
 
         // foreach(Object o in words)
         // {
@@ -50,10 +65,11 @@ public class Scripture
             foreach (Word word in _words)
             {
                 Word w = new Word("");
+                //w.IsHidden();
                 
                 if (word == randWord)
                 {
-                    //Word.IsHidden() = true;
+                    //w.IsHidden() = true;
                     Console.WriteLine("___");
                 }
 
