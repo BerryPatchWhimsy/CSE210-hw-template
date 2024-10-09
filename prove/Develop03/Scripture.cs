@@ -1,18 +1,19 @@
 using System;
 using System.Collections.Generic;
 
-
-
-
 public class Scripture
 {
-
     public List<Word> _words = new List<Word>();
+
+    //public List<string> words = new List<string>();
 
     private Reference _reference;
     
     public Scripture(Reference Reference, string text)
     {
+        
+        //Reference r1 = new Reference("", , );
+        
         _reference = Reference;
         string input = text;
         //Word w = new Word("");
@@ -29,7 +30,7 @@ public class Scripture
 
         // foreach (string s in list)
         // {
-        //     List<string> _words = new List<string>();
+        //     words.Add(s);
 
         // }
 
@@ -42,16 +43,37 @@ public class Scripture
     
     public void HideRandomWord(int numberToHide)
     {
+        //string text = GetDisplayText();
+
         Random randomGenerator = new Random();
         int index = randomGenerator.Next(_words.Count);
+        //int index = randomGenerator.Next(words.Count);
             
         object randWord = _words[index];
+        //string randWord = words[index];
 
         //Console.WriteLine(_words[index]);
 
         //loop repeat random for number to hide
         for (int i=0; i<_words.Count; i = i + numberToHide)
         {
+            // for (int i=0; i<words.Count; i = i + numberToHide)
+            // {
+            //     foreach (string w in words)
+            //     {
+            //         Word word = new Word(w);
+
+            //         foreach (Word wrd in words)
+            //         {
+            //             if (w == randWord)
+            //             {
+            //                 w.IsHidden() = true;
+            //                 Console.WriteLine("___");
+            //             }
+            //         }
+                
+            //     }
+            
             foreach (Word word in _words)
             {
                 //Word w = new Word("");
@@ -78,13 +100,13 @@ public class Scripture
 
         foreach (Word w in _words)
         {
-            string script = w.ToString();
+            string script = w.GetDisplayText();
             scriptText.Add(script);
         }
         
-        string text = string.Join(",", scriptText);
+        string text = string.Join(" ", _words);
         
-        return $"{_reference}-{text}";
+        return text;
 
     }
 

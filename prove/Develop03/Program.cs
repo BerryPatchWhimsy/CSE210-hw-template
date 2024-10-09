@@ -9,17 +9,18 @@ class Program
         Reference r1 = new Reference("Moses", 7, 18);
         Scripture s2 = new Scripture(r1, "And the Lord called his people Zion, because they were of one heart and one mind, and dwelt in righteousness; and there was no poor among them.");
         Console.Clear();
-        Console.WriteLine(r1.GetDisplayText());
+        Console.Write(r1.GetDisplayText());
         Console.WriteLine(s2.GetDisplayText());
 
-        
-        // Console.WriteLine("Press Enter or type 'quit'.");
-        // Console.ReadLine();
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to continue or type 'quit' to end.");
+        //Console.ReadLine();
         
         // while (Console.ReadLine() != "quit")
         // {
         //     Console.ReadLine();
         //     Console.Clear();
+
         //     s2.HideRandomWord(3);
 
         //     while (s2.IsCompletelyHidden() != true)

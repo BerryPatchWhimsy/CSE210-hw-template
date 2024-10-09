@@ -21,9 +21,14 @@ public class Reference
         _endVerse = endVerse;
     }
 
+    public string GetDisplayTextMultiple()
+    {
+        return $"{_book} {_chapter}:{_verse}-{_endVerse}- "; 
+    }
+
     public string GetDisplayText()
     {
-        return $"{_book} {_chapter}:{_verse}-{_endVerse}"; 
+        return $"{_book} {_chapter}:{_verse}- "; 
     }
 
 }

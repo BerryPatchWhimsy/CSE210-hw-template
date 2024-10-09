@@ -42,14 +42,18 @@ public class Word
     public string GetDisplayText()
     {
         // show word or underscore
-        if (IsHidden() == false)
-        {
+        // bool txt = IsHidden();
+
+        // if (txt == false)
+        // {
             
-            return _text;
-        }
-        else
-        {
-            return "___";
-        }
+        //     return _text;
+        // }
+        // else
+        // {
+        //     return "___";
+        // }
+
+        return _text;
     }
 }
