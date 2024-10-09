@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 
 
+
+
 public class Scripture
 {
 
     public List<Word> _words = new List<Word>();
 
     private Reference _reference;
-    
-
     
     public Scripture(Reference Reference, string text)
     {
@@ -19,34 +19,24 @@ public class Scripture
 
         string[] pieces = input.Split(' '); 
         List<string> list = pieces.ToList();
-
         
-
-        foreach (string s in list)
+        foreach(string s in list)
         {
-            List<string> _words = new List<string>();
-            // Scripture script = new Scripture(Reference, "");
-
-            // script._words.Add(s);
-
+            Word word = new Word(s);
+            _words.Add(word);
+            
         }
-        
-        
-        //List<string> list = pieces.ToList();
 
-        // List<string> _words = new List<string>();
-        // List
+        // foreach (string s in list)
+        // {
+        //     List<string> _words = new List<string>();
+
+        // }
 
         // foreach(string s in list)
         // {
         //     _words.Add((object)s);   
         // }
-
-        // foreach(Object o in words)
-        // {
-        //     _words.Add(o);
-        // }
-
     }
 
     
@@ -64,8 +54,7 @@ public class Scripture
         {
             foreach (Word word in _words)
             {
-                Word w = new Word("");
-                //w.IsHidden();
+                //Word w = new Word("");
                 
                 if (word == randWord)
                 {
@@ -75,7 +64,6 @@ public class Scripture
 
                 else 
                 {
-                   
                    Console.WriteLine(word);
                 }
             }
@@ -85,12 +73,19 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        //notes how to show list
-        object wordList = _words;
+        //notes how to show list 
+        List<string> scriptText = new List<string>();
 
-        string scriptureText = wordList.ToString();
+        foreach (Word w in _words)
+        {
+            string script = w.ToString();
+            scriptText.Add(script);
+        }
+        
+        string text = string.Join(",", scriptText);
+        
+        return $"{_reference}-{text}";
 
-        return scriptureText;
     }
 
     public bool IsCompletelyHidden()
